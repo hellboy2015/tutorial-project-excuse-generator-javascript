@@ -3,13 +3,16 @@ let action = ['ate','peed','crushed','broke'];
 let what = ['my homework', 'the keys', 'the car'];
 let when = ['before the class','right on time','when I finished','during my lunch','while I was praying'];
 
-function generateExcuse() {
+function excuse() {
 
-    console.log(who[0]);
-    
+    function randomSelection(rgnSize){
+        return Math.floor(Math.random()*rgnSize);
+    }
 
-
-    return excuse;
+    function generateExcuse() {
+        var excuse = "";
+        excuse = who[randomSelection(who.length)]+" "+action[randomSelection(action.length)]+" "+what[randomSelection(what.length)]+" "+when[randomSelection(when.length)]
+        return excuse;
+    }
+    document.getElementById("excuse").innerHTML = generateExcuse();
 }
-
-//onLoad and set the excuse into the innerHTML of the #excuse HTML element.
